@@ -6,9 +6,9 @@ endif
 call textobj#user#plugin('matlabblock', {
 \      '-': {
 \           'sfile': expand('<sfile>:p'),
-\           'select-a': 'ar',
+\           'select-a': 'am',
 \           'select-a-function': 'textobj#matlabblock#select_a',
-\           'select-i': 'ir',
+\           'select-i': 'im',
 \           'select-i-function': 'textobj#matlabblock#select_i'
 \      }
 \    })

@@ -1,7 +1,11 @@
-let s:comment_escape = '\v^[^#]*'
-let s:block_openers = '\zs(<function>|<if>|<for>|<while>|<switch>)'
+let s:comment_escape = '\v^[^\%]*'
+let s:block_openers = '\zs(<if>|<for>|<while>|<switch>|<function>)'
 let s:start_pattern = s:comment_escape . s:block_openers
 let s:end_pattern = s:comment_escape . '\zs<end>'
+
+function! textobj#matlabblock#select(object_type)
+  return textobj#matlabblock#select_{a:object_type}()
+endfunction
 
 function! textobj#matlabblock#select_a()
     let s:flags = 'W'
